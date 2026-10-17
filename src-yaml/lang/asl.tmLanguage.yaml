@@ -1,0 +1,22 @@
+# This is the syntax definition source for UEFI ASL files
+name: ACPI Source Language(ASL)
+scopeName: source.uefi-asl
+fileTypes:
+  - asl
+  - asi
+
+patterns:
+  - include: "#comment"
+  - include: "#comment_block"
+
+repository:
+  # Component for single-line comments starting with //
+  comment:
+    match: '//.*$'
+    name: comment.line.double-slash.uefi-asl
+
+  # Component for multi-line block comments starting with /* and ending with */
+  comment_block:
+    begin: '/\*'
+    end: '\*/'
+    name: comment.block.c.uefi-asl

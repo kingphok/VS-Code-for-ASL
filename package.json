@@ -1,0 +1,66 @@
+{
+  "name": "vs-code-for-asl",
+  "displayName": "VS Code for ASL",
+  "description": "VS Code Extension for reading ACPI Source Language(ASL) easily.",
+  "version": "0.0.1",
+  "publisher": "Jingbo",
+  "pricing": "Free",
+  "sponsor": {
+    "url": "https://ko-fi.com/kingphok"
+  },
+  "icon": "images/logo.png",
+  "galleryBanner": {
+    "color": "#3A3A3A",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kingphok/VS-Code-for-ASL.git"
+  },
+  "engines": {
+    "vscode": "^1.140.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "tsc -p ./ --noEmit && node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "tsc -p ./ --noEmit && node esbuild.js --production",
+    "check-types": "tsc -p ./ --noEmit",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext .ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.140.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "uefi-asl",
+        "aliases": [
+          "ACPI Source Language(ASL)"
+        ],
+        "extensions": [
+          ".asl",
+          ".asi"
+        ],
+        "configuration": "./lang/asl.configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "uefi-asl",
+        "scopeName": "source.uefi-asl",
+        "path": "./lang/asl.tmLanguage.json"
+      }
+    ]
+  }
+}
