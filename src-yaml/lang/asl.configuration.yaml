@@ -3,7 +3,7 @@ comments:
   blockComment:
     - "/*"
     - "*/"
-  brackets:
+brackets:
   - - "["
     - "]"
   - - "{"
@@ -21,4 +21,6 @@ autoClosingPairs:
     - "\""
   - open: "/*"
     close: "*/"
-folding: null
+markers:
+    start: "^\\s*\\{$"
+    end: "^\\s*\\}$"
