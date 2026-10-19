@@ -9,9 +9,12 @@ patterns:
   - include: "#comment"
   - include: "#comment_block"
   - include: "#operators"
+  - include: "#parameters"
+  - include: "#method_data_objects"
   - include: "#ascii_string"
   - include: "#hex_numbers"
   - include: "#decimal_numbers"
+  - include: "#asl_names"
 
 repository:
   # Component for single-line comments starting with //
@@ -27,8 +30,19 @@ repository:
 
   # 19.4 ASL Operators Summary
   operators:
-    match: '(?i)\b(?:AccessAs|Acquire|Add|Alias|And|ArgX|BankField|Break|BreakPoint|Buffer|Case|Concatenate|ConcatenateResTemplate|CondRefOf|Connection|Continue|CopyObject|CreateBitField|CreateByteField|CreateDWordField|CreateField|CreateQWordField|CreateWordField|DataTableRegion|Debug|Decrement|Default|DefinitionBlock|DerefOf|Device|Divide|DMA|DWordIO|DWordMemory|DWordSpace|EisaId|Else|ElseIf|EndDependentFn|Event|ExtendedIO|ExtendedMemory|ExtendedSpace|External|Fatal|Field|FindSetLeftBit|FindSetRightBit|FixedDMA|FixedIO|Fprintf|FromBCD|Function|GpioInt|GpioIo|I2CSerialBusV2|If|Include|Increment|Index|IndexField|Interrupt|IO|IRQ|IRQNoFlags|LAnd|LEqual|LGreater|LGreaterEqual|LLess|LLessEqual|LNot|LNotEqual|Load|LoadTable|LocalX|LOr|Match|Memory24|Memory32|Memory32Fixed|Method|Mid|Mod|Multiply|Mutex|Name|NAnd|NoOp|NOr|Not|Notify|ObjectType|Offset|One|Ones|OperationRegion|Or|Package|PowerResource|Printf|Processor|QWordIO|QWordMemory|QWordSpace|RawDataBuffer|RefOf|Register|Release|Reset|ResourceTemplate|Return|Revision|Scope|ShiftLeft|ShiftRight|Signal|SizeOf|Sleep|SPISerialbusV2|Stall|StartDependentFn|StartDependentFnNoPri|Store|Subtract|Switch|ThermalZone|Timer|ToBCD|ToBuffer|ToDecimalString|ToHexString|ToInteger|ToPLD|ToString|ToUUID|Unicode|UARTSerialBusV2|VendorLong|VendorShort|Wait|While|WordBusNumber|WordIO|WordSpace|Xor|Zero)\b'
+    match: '(?i)\b(?:AccessAs|Acquire|Add|Alias|And|BankField|Break|BreakPoint|Buffer|Case|Concatenate|ConcatenateResTemplate|CondRefOf|Connection|Continue|CopyObject|CreateBitField|CreateByteField|CreateDWordField|CreateField|CreateQWordField|CreateWordField|DataTableRegion|Debug|Decrement|Default|DefinitionBlock|DerefOf|Device|Divide|DMA|DWordIO|DWordMemory|DWordSpace|EisaId|Else|ElseIf|EndDependentFn|Event|ExtendedIO|ExtendedMemory|ExtendedSpace|External|Fatal|Field|FindSetLeftBit|FindSetRightBit|FixedDMA|FixedIO|Fprintf|FromBCD|Function|GpioInt|GpioIo|I2CSerialBusV2|If|Include|Increment|Index|IndexField|Interrupt|IO|IRQ|IRQNoFlags|LAnd|LEqual|LGreater|LGreaterEqual|LLess|LLessEqual|LNot|LNotEqual|Load|LoadTable|LOr|Match|Memory24|Memory32|Memory32Fixed|Method|Mid|Mod|Multiply|Mutex|Name|NAnd|NoOp|NOr|Not|Notify|ObjectType|Offset|One|Ones|OperationRegion|Or|Package|PowerResource|Printf|Processor|QWordIO|QWordMemory|QWordSpace|RawDataBuffer|RefOf|Register|Release|Reset|ResourceTemplate|Return|Revision|Scope|ShiftLeft|ShiftRight|Signal|SizeOf|Sleep|SPISerialbusV2|Stall|StartDependentFn|StartDependentFnNoPri|Store|Subtract|Switch|ThermalZone|Timer|ToBCD|ToBuffer|ToDecimalString|ToHexString|ToInteger|ToPLD|ToString|ToUUID|Unicode|UARTSerialBusV2|VendorLong|VendorShort|Wait|While|WordBusNumber|WordIO|WordSpace|Xor|Zero)\b'
     name: keyword.control.uefi-asl
+
+  # 19.2.7 ASL Parameter Keyword Terms
+  parameters:
+    match: '(?i)\b(?:ActiveBoth|ActiveHigh|ActiveLow|AddressingMode10Bit|AddressingMode7Bit|AddressRangeACPI|AddressRangeMemory|AddressRangeNVS|AddressRangeReserved|AnyAcc|AttribBlock |AttribProcessCall|AttribBlockProcessCall|AttribByte|AttribBytes|AttribBytes (n)|AttribQuick|AttribRawBytes|AttribRawBytes (n)|AttribRawProcessBytes|AttribRawProcessBytes (n)|AttribSendReceive|AttribWord|BigEndianin|BufferAcc|BuffFieldObj|BuffObj|BusMaster|ByteAcc|Cacheable|ClockPhaseFirst|ClockPhaseSecond|ClockPolarityHigh|ClockPolarityLow|ControllerInitiated|DataBitsEight|DataBitsFive|DataBitsNine|DataBitsSeven|DataBitsSix|Decode10|Decode16|DenseTranslation|DeviceInitiated|DeviceObj|DWordAcc|Edge|EmbeddedControl|EntireRange|EventObj|Exclusive|ExclusiveAndWake|FFixedHW|FieldUnitObj|FlowControlHardware|FlowControlNone|FlowControlXon|FourWireMode|GeneralPurposeIO|GenericSerialBus|IntObj|IoRestrictionInputOnly|IoRestrictionNone|IoRestrictionNoneAndPreserve|IoRestrictionOutputOnly|IPMI|ISAOnlyRanges|Level|LittleEndian|Lock|MaxFixed|MaxNotFixed|MEQ|MethodObj|MGE|MGT|MinFixed|MinNotFixed|MLE|MLT|MTR|MutexObj|NoLock|NonCacheable|NonISAOnlyRanges|NotBusMaster|NotSerialized|OpRegionObj|ParityTypeEven|ParityTypeMark|ParityTypeNone|ParityTypeOdd|ParityTypeSpace|PCC|PCI_Config|PciBarTarget|PkgObj|PolarityHigh|PolarityLow|PosDecode|PowerResObj|Prefetchable|Preserve|PRM|PullDefault|PullDown|PullNone|PullUp|QWordAcc|ReadOnly|ReadWrite|ResourceConsumer|ResourceProducer|Serialized|Shared|SharedAndWake|SMBus|SparseTranslation|StopBitsOne|StopBitsOnePlusHalf|StopBitsTwo|StopBitsZero|StrObj|SubDecode|SystemCMOS|SystemIO|SystemMemory|ThermalZoneObj|ThreeWireMode|Transfer16|Transfer8|Transfer8_16|TypeStatic|TypeTranslation|UnknownObj|Width128Bit|Width16Bit|Width256Bit|Width32Bit|Width64Bit|Width8Bit|WordAcc|WriteAsOnes|WriteAsZeros|WriteCombining)\b'
+    name: keyword.other.uefi-asl
+
+  # 19.6.6 Argx (Method Argument Data Objects)
+  # 19.6.79 LocalX (Method Local Data Objects)
+  method_data_objects:
+    match: '(?i)\b(?:Arg0|Arg1|Arg2|Arg3|Arg4|Arg5|Arg6|Local0|Local1|Local2|Local3|Local4|Local5|Local6|Local7)\b'
+    name: variable.parameter.uefi-asl
 
   # "ASCII string"
   ascii_string:
@@ -44,3 +58,8 @@ repository:
   decimal_numbers:
     match: '\b[0-9]+\b'
     name: constant.numeric.decimal.uefi-asl
+
+  # 19.3.1 ASL Names
+  asl_names:
+    match: '\b[A-Za-z_][A-Za-z0-9_]{1,3}\b'
+    name: variable.other.uefi-asl
