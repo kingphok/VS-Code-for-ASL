@@ -4,6 +4,7 @@ scopeName: source.uefi-asl
 fileTypes:
   - asl
   - asi
+  - dsl
 
 patterns:
   - include: "#comment"

@@ -3,7 +3,8 @@
   "scopeName": "source.uefi-asl",
   "fileTypes": [
     "asl",
-    "asi"
+    "asi",
+    "dsl"
   ],
   "patterns": [
     {

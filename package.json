@@ -53,7 +53,8 @@
         ],
         "extensions": [
           ".asl",
-          ".asi"
+          ".asi",
+          ".dsl"
         ],
         "configuration": "./lang/asl.configuration.json"
       }
